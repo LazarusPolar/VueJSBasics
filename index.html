@@ -1,6 +1,8 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
+    <!-- Escucha un evento -->
+    <input type="text" v-on:input="cambiaTitulo"> 
     <p>{{ title }}</p>
 </div>
 
@@ -9,6 +11,11 @@
         el: '#app',
         data: {
             title: 'Hola, mundo!'
+        },
+        methods: {
+            cambiaTitulo: function(event){
+                this.title = event.target.value;
+            }
         }
     });
 </script>
